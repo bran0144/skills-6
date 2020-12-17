@@ -1,0 +1,80 @@
+Runtime
+-------
+
+1. Runtime for does_string_contain_letter:
+
+Searching in a list or string is linear - O(n)
+
+
+2. Runtime for duplicate_letters:
+
+O(mn)
+
+3. Runtime for duplicate_letters2:
+
+O(n^2)
+
+
+
+Stacks and Queues
+-----------------
+
+
+1. Which would be a better data structure for creating a Stack: a Linked List or 
+   a built-in Python list? Explain why, referencing the runtime requirements for
+   Stack operations (push, pop, etc).
+
+Stacks are last in, first out, which means that you add items to the front(push), and items are 
+removed from the top(pop). In a Python list, if you add or remove from the front, everything after 
+must be iterated over and moved, thus making it less efficient (O(n)), unless you flip the list so that you
+consider the top the bottom. Then it is O(1). In a linked list, you would 
+have the pointer pointing to the top (i.e. head), which would make pushing and popping from the 
+top very efficient (O(1)) for both. 
+
+
+
+2. Which would be a better data structure for creating a Queue: a Linked List or
+   a built-in Python list? Explain why, referencing the runtime requirements for
+   Queue methods (enqueue, dequeue, etc). 
+
+Queues add items to the back (enqueing) and only remove items from the front (dequeing).
+It's O(1) to add an item to the end of a Python list, and it's O(n) to remove an item 
+from the front of a Python list, because all items need to be iterated over to be moved 
+up to the front. In a doubly linked list, it's O(1) to enqueue (add items 
+to the front) and O(1) to dequeue (remove items from the front).  In a singly linked list,
+it's O(n) to enqueue, and O(1) to dequeue because it would only have a pointer at the head,
+it would need to iterate over the entire linked list until finding the end to add items
+to the back. So, for Queue, a doubly linked list would be most efficient (O(1)) for both enqueue
+and dequeue, while a singly linked list or Python List would both be roughly equivalent (O(1) x O(n)).
+
+Trees
+-----
+
+1. Using the diagram in the instructions, in what order would a Breadth First
+   Search (BFS) algorithm visit each node  until finding burritos (starting at
+   food)?
+
+   Breadth first search would start with food, then the children of food (assuming left to right): 
+   Italian, Indian, Mexican. When none of these are "burritos", the search will move to 
+   the descendents of food: Lasagna, pizza, tikka masala, saag, and then finally it finds
+   "burritos". So, Breadth first starts with the children, then the descendents and so on 
+   until it finds the correct node.
+
+
+2. Using the diagram in the instructions, In what order would a Depth First 
+   Search (DFS) algorithm visit each node until finding Chicago-style (starting
+   at food)? 
+
+   Depth First Search would start with food, and then the right-most child:
+   Mexican. Then Mexican's children: enchiladas, tacos, burritos. Then Up to Indian and its children:
+   tikka masala. Then back up to Italian: pizza, Sicillian, New York style, Chicago Style.  
+
+3. How is a binary search tree different from other trees?
+
+   A binary search tree is limited to only two child nodes per node (it can have 0, 1, or 2). The 
+   left child node is always less than the parent node and the right child node is always greater 
+   than the parent node. Each descendent nodes must also follow the same rules. Thus, the data
+   throughout is ordered and thus must quicker to search.
+
+
+
